@@ -90,6 +90,7 @@
      | document | doc  |
      | text     | txt  |
      | position | pos  |
+     | information | info |
   
     3. 去掉所有非前置元音（但保证单词仍然能被拼读出来）（eg. computer -> cmptr，screen -> scrn）
   
