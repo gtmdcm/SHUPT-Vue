@@ -6,53 +6,42 @@
             </h1>
             <div id="controls">
                 <router-link to="/">PT介绍</router-link>
-                <router-link to="/">加入我们</router-link>
+                <router-link to="/">BBS</router-link>
             </div>
         </div>
-        <flat-surface-shader class="shader"
-                             type="webgl"
-                             :light="{ambient: '#22bc9e', diffuse: '#0b7a64'}">
-        </flat-surface-shader>
+        <div id="head-bar">
+            <el-button @click="$router.push('/sign-up')">
+                注册
+            </el-button>
+            <el-button @click="$router.push('/sign-in')">
+                登录
+            </el-button>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+    import {Component, Vue} from 'vue-property-decorator';
+    import {Button} from 'element-ui';
 
-@Component({})
-export default class Home extends Vue {
+    @Component({
+        components: {
+            'el-button': Button,
+        },
+    })
+    export default class Home extends Vue {
 
-}
+    }
 </script>
 
 <style scoped lang="stylus">
-    .shader
-        position absolute
-        left 0
-        top 0
-        width 100vw
-        height 100vh
-        margin 0
-        padding 0
-        z-index -1
-
     #title
-        background rgba(0, 0, 0, 0.6)
-        z-index 0
         width 100vw
         height 100vh
         display flex
         flex-direction column
         justify-content center
         align-items center
-        a
-            font-family "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif
-            transition 0.2s all
-            text-decoration none
-            color white
-            &:hover
-                cursor pointer
-                color #93b0dc
         h1
             font-size 80pt
             font-weight 100
@@ -61,4 +50,25 @@ export default class Home extends Vue {
             display flex
             flex-direction row
             justify-content space-between
+
+    #head-bar
+        position absolute
+        top 0
+        z-index 1
+        width 100vw
+        height 60px
+        background rgba(0, 0, 0, 0.5)
+        display flex
+        flex-direction row
+        justify-content flex-end
+        align-items center
+        .el-button
+            margin-right 10px
+            background transparent
+            color #c7c7c7
+            border-color #c7c7c7
+            transition all 0.3s
+            line-height 100%
+            &:hover
+                background rgba(255, 255, 255, 0.2)
 </style>
