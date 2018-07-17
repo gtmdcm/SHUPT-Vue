@@ -10,11 +10,14 @@
             </div>
         </div>
         <div id="head-bar">
-            <el-button @click="$router.push('/sign-up')">
+            <el-button v-if="!logined" @click="$router.push('/sign-up')">
                 注册
             </el-button>
-            <el-button @click="$router.push('/sign-in')">
+            <el-button v-if="!logined" @click="$router.push('/sign-in')">
                 登录
+            </el-button>
+            <el-button v-if="logined" @click="signOut">
+                退出
             </el-button>
         </div>
     </div>
@@ -30,7 +33,12 @@
         },
     })
     export default class Home extends Vue {
+        private logined = !!localStorage.getItem('JWT');
 
+        public signOut() {
+            localStorage.removeItem('JWT');
+            this.logined = false;
+        }
     }
 </script>
 

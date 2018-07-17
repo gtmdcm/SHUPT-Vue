@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        <router-view/>
+        <transition mode="out-in">
+            <router-view/>
+        </transition>
         <flat-surface-shader class="shader"
                              type="webgl"
                              :light="{ambient: '#22bc9e', diffuse: '#0b7a64'}">
@@ -39,4 +41,22 @@
         &:hover
             cursor pointer
             color #93b0dc
+
+    .v-enter
+        opacity 0
+
+    .v-enter-active
+        transition 0.5s
+
+    .v-enter-to
+        opacity 1
+
+    .v-leave
+        opacity 1
+
+    .v-leave-to
+        opacity 0
+
+    .v-leave-active
+        transition 0.5s
 </style>
