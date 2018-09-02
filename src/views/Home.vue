@@ -10,9 +10,6 @@
             </div>
         </div>
         <div id="head-bar">
-            <el-button v-if="!logined" @click="$router.push('/sign-up')">
-                注册
-            </el-button>
             <el-button v-if="!logined" @click="$router.push('/sign-in')">
                 登录
             </el-button>

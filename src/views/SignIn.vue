@@ -2,7 +2,7 @@
     <div id="sign-in">
         <el-form :model="form" label-width="80px">
             <el-form-item label="用户名">
-                <el-input v-model="form.username"></el-input>
+                <el-input v-model="form.card_id"></el-input>
             </el-form-item>
             <el-form-item label="密码">
                 <el-input type="password" v-model="form.password"></el-input>
@@ -43,14 +43,14 @@
     })
     export default class SignIn extends Vue {
         private form = {
-            username: '',
+            card_id: '',
             password: '',
         };
         private success = false;
         private fail = false;
 
         public submit() {
-            Axios.post(API_URL + '/auth', this.form)
+            Axios.post(API_URL + '/auth/login', this.form)
                 .then((result) => {
                     if (result.data !== '') {
                         this.success = true;
@@ -58,7 +58,7 @@
                         setTimeout(() => this.$router.push('/'), 2000);
                     } else {
                         this.fail = true;
-                        this.form.username = '';
+                        this.form.card_id = '';
                         this.form.password = '';
                         setTimeout(() => this.fail = false, 20000);
                     }
