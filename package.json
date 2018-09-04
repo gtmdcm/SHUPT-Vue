@@ -15,6 +15,7 @@
     "babel-plugin-component": "^1.1.1",
     "babel-preset-es2015": "^6.24.1",
     "element-ui": "^2.4.3",
+    "gq-loader": "^0.1.5",
     "vue": "^2.5.16",
     "vue-class-component": "^6.0.0",
     "vue-flat-surface-shader": "^1.0.5",
@@ -36,7 +37,6 @@
     "not ie <= 8"
   ],
   "gitHooks": {
-    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.ts": [

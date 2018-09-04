@@ -29,8 +29,10 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import {Alert, Button, Form, FormItem, Input} from 'element-ui';
-    import Axios from 'axios';
     import {API_URL} from '../env/env.dev';
+    import Axios from 'axios';
+
+    const getUser = require('../graphql/getUser.graphql');
 
     @Component({
         components: {
@@ -50,6 +52,9 @@
         private fail = false;
 
         public submit() {
+            getUser({Id: 2}).then((data: any) => {
+                console.log(data);
+            });
             Axios.post(API_URL + '/auth/login', this.form)
                 .then((result) => {
                     if (result.data !== '') {

@@ -1,0 +1,5 @@
+query Query($Id: ID!){
+    getUser(id:$Id) {
+        Nickname
+    }
+}

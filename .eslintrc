@@ -1,0 +1,8 @@
+{
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "src/graphql/request.ts"
+    ]
+  }
+}

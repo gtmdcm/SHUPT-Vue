@@ -12,7 +12,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "node"    ],
+      "node"
+    ],
     "paths": {
       "@/*": [
         "src/*"
@@ -34,5 +35,13 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "rules": {
+    "no-console": [
+      false
+    ],
+    "only-arrow-functions": [
+      false
+    ]
+  }
 }
