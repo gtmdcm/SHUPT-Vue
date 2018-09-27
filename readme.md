@@ -6,4 +6,4 @@
 
 ## Want to contribute?
 
-See our [contributing.md](https://github.com/gtmdcm/SHUPT-Vue/blob/master/contributing.md)
+See our [contributing.md](https://github.com/gtmdcm/SHUPT-Vue/blob/master/doc/contributing.md)
